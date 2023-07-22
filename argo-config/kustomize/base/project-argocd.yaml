@@ -9,7 +9,7 @@ spec:
   description: Homelab cluster project
   sourceRepos:
     - '*'
-  clusterResourceWhiteList:
+  clusterResourceWhitelist:
     - group: ''
       kind: rbac.authorization.k8s.io:ClusterRoleBinding
     - group: ''
