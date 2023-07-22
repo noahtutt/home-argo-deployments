@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - application-base.yaml
 - project-homelab.yaml
+- application-argo-deployment.yaml
