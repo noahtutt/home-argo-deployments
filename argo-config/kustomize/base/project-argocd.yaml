@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata: 
+  name: homelab
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Homelab cluster project
+  sourceRepos:
+    - '*'
+  clusterResourceWhiteList:
+    - group: ''
+      kind: rbac.authorization.k8s.io:ClusterRoleBinding
+    - group: ''
+      kind: rbac.authorization.k8s.io:CustomResourceDefinition
+    - group: ''
+      kind: rbac.authorization.k8s.io:ClusterRole
+    - group: ''
+      kind: Namespace
+  destinations:
+    - namespace: argocd
+      server: https://kubernetes.default.svc

@@ -10,5 +10,5 @@ spec:
   sourceRepos:
     - '*'
   destinations:
-    - namespace: argocd
+    - namespace: homelab
       server: https://kubernetes.default.svc
