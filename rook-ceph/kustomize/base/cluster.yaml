@@ -20,7 +20,6 @@ spec:
   dashboard:
     enabled: true
     ssl: false
-    port: 80
   network:
     hostNetwork: false
   storage:
