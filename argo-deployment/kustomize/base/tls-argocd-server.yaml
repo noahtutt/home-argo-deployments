@@ -7,6 +7,6 @@ spec:
   dnsNames:
   - argo.noahtutt.dev
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-prod
     kind: ClusterIssuer
     group: cert-manager.io
