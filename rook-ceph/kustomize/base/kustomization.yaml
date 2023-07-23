@@ -9,3 +9,5 @@ resources:
 - local-storage-class.yaml
 - persistent-volumes.yaml
 - cluster.yaml
+- tls-rook-ceph-server.yaml
+- ingress.yaml

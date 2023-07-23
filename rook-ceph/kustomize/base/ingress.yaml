@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rook-ceph-dashboard
+  annotations: 
+    ingress.kubernetes.io/proxy-body-size: 100M
+    ingress.kubernetes.io/app-root: "/"
+spec:
+  rules:
+    - host: ceph.noahtutt.dev
+      http: 
+        paths:
+        - backend:
+            service: 
+              name: rook-ceph-mgr-dashboard
+              port:
+                name: http-dashboard
+          path: / 
+          pathType: Prefix
+  tls:
+    - hosts:
+      - ceph.noahtutt.dev
+      secretName: tls-rook-ceph-dashboard
+
