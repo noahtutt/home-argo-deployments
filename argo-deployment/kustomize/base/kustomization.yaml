@@ -7,3 +7,6 @@ resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 - tls-argocd-server.yaml
 - ingress.yaml
+
+patchesStrategicMerge:
+- argocd-cmd-params-cm.yaml
