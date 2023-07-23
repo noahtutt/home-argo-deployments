@@ -11,7 +11,7 @@ spec:
   persistentVolumeReclaimPolicy: Delete
   storageClassName: local-storage
   local:
-    path: /dev/mapper/debian--k8s--node--0--vg-rook--ceph--mon-0
+    path: /dev/mapper/debian--k8s--node--0--vg-rook--ceph--mon--0
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -34,7 +34,7 @@ spec:
   persistentVolumeReclaimPolicy: Delete
   storageClassName: local-storage
   local:
-    path: /dev/mapper/debian--k8s--node--0--vg-rook--ceph--mon-1
+    path: /dev/mapper/debian--k8s--node--0--vg-rook--ceph--mon--1
   nodeAffinity:
     required:
       nodeSelectorTerms:
