@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources.finalizer.argocd.argoproj.io
 spec:
-  project: homelab
+  project: cert-manager
   source:
     repoURL: https://github.com/noahtutt/home-argo-deployments
     targetRevision: HEAD
