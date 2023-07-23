@@ -20,5 +20,4 @@ spec:
   tls:
     - hosts:
       - ceph.noahtutt.dev
-      secretName: tls-rook-ceph-dashboard
-
+      secretName: tls-rook-ceph-server
