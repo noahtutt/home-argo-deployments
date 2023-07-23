@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: rook-ceph-mon
+  name: rook-ceph-blockstorage
 spec:
   capacity:
     storage: 200Gi
@@ -34,7 +34,7 @@ spec:
   persistentVolumeReclaimPolicy: Delete 
   storageClassName: local-storage
   local:
-    path: /dev/mapper/debian--k8s--node--0--vg-rook--ceph--mon
+    path: /dev/mapper/debian--k8s--node--0--vg-rook--ceph--blockstorage
   nodeAffinity:
     required:
       nodeSelectorTerms:
