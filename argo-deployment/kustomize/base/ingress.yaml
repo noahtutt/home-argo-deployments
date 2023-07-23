@@ -9,12 +9,12 @@ spec:
   rules:
     - host: argo.noahtutt.dev
       http: 
-      paths:
+        paths:
         - backend:
             service: 
               name: argocd-server
               port:
-                number: 80
+                name: http
           path: / 
           pathType: Prefix
   tls:
