@@ -3,3 +3,6 @@ kind: Kustomization
 namespace: rook-ceph
 
 resources:
+- https://raw.githubusercontent.com/rook/rook/master/deploy/examples/crds.yaml
+- https://raw.githubusercontent.com/rook/rook/master/deploy/examples/common.yaml
+- operator.yaml
