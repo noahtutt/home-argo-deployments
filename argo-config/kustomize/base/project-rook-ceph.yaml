@@ -16,8 +16,12 @@ spec:
       kind: ClusterRole
     - group: 'apiextensions.k8s.io'
       kind: CustomResourceDefinition
+    - group: 'storage.k8s.io'
+      kind: StorageClass
     - group: ''
       kind: Namespace
+    - group: ''
+      kind: PersistentVolume
   destinations:
     - namespace: rook-ceph
       server: https://kubernetes.default.svc
