@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server
+  annotations: 
+    ingress.kubernetes.io/proxy-body-size: 100M
+    ingress.kubernetes.io/app-root: "/"
+spec:
+  rules:
+    - host: argo.noahtutt.dev
+      http: 
+      paths:
+        - backend:
+            service: 
+              name: argocd-server
+              port:
+                number: 80
+          path: / 
+          pathType: Prefix
+  tls:
+    - hosts:
+      - argo.noahtutt.dev
+      secretName: tls-argocd-server
+
