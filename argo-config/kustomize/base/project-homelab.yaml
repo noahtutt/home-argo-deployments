@@ -19,7 +19,7 @@ spec:
     - group: 'admissionregistration.k8s.io'
       kind: MutatingWebhookConfiguration
     - group: 'admissionregistration.k8s.io'
-      kind: ValidationWebhookConfiguration
+      kind: ValidatingWebhookConfiguration
     - group: ''
       kind: Namespace
   destinations:
