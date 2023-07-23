@@ -6,3 +6,6 @@ resources:
 - https://raw.githubusercontent.com/rook/rook/master/deploy/examples/crds.yaml
 - https://raw.githubusercontent.com/rook/rook/master/deploy/examples/common.yaml
 - operator.yaml
+- local-storage-class.yaml
+- persistent-volumes.yaml
+- cluster.yaml
