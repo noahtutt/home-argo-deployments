@@ -4,5 +4,6 @@ resources:
 - application-base.yaml
 - project-homelab.yaml
 - project-argocd.yaml
+- project-cert-manager.yaml
 - application-argo-deployment.yaml
 - application-cert-manager.yaml
