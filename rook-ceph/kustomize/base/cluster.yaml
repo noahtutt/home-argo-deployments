@@ -7,7 +7,7 @@ spec:
   dataDirHostPath: /var/lib/rook
   mon:
     count: 2
-    allowMultiplePerNode: false
+    allowMultiplePerNode: true
     volumeClaimTemplate:
       spec:
         storageClassName: local-storage
