@@ -5,5 +5,7 @@ resources:
 - project-homelab.yaml
 - project-argocd.yaml
 - project-cert-manager.yaml
+- project-rook-ceph.yaml
 - application-argo-deployment.yaml
 - application-cert-manager.yaml
+- application-rook-ceph.yaml
