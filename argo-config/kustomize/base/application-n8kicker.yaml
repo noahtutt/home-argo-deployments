@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: n8kicker
+  namespace: argocd
+  finalizers:
+    - resources.finalizer.argocd.argoproj.io
+spec:
+  project: homelab
+  source:
+    repoURL: https://github.com/noahtutt/home-argo-deployments
+    targetRevision: HEAD
+    path: n8kicker/kustomize/base
+  destination:
+    namespace: n8kicker 
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - ApplyOutOfSyncOnly=true
+

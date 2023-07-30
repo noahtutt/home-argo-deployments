@@ -10,22 +10,10 @@ spec:
   sourceRepos:
     - '*'
   clusterResourceWhitelist:
-    - group: 'rbac.authorization.k8s.io'
-      kind: ClusterRoleBinding
-    - group: 'rbac.authorization.k8s.io'
-      kind: ClusterRole
-    - group: 'apiextensions.k8s.io'
-      kind: CustomResourceDefinition
-    - group: 'admissionregistration.k8s.io'
-      kind: MutatingWebhookConfiguration
-    - group: 'admissionregistration.k8s.io'
-      kind: ValidatingWebhookConfiguration
-    - group: 'cert-manager.io'
-      kind: ClusterIssuer
     - group: ''
       kind: Namespace
   destinations:
     - namespace: homelab
       server: https://kubernetes.default.svc
-    - namespace: cert-manager
+    - namespace: n8kicker
       server: https://kubernetes.default.svc
