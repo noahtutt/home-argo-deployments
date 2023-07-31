@@ -12,4 +12,3 @@ resources:
 - tls-rook-ceph-server.yaml
 - ingress.yaml
 - storage-class.yaml
-- ceph-block-pool.yaml
