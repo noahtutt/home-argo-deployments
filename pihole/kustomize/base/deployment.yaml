@@ -17,9 +17,9 @@ spec:
     spec:
       dnsPolicy: "ClusterFirst"
       dnsConfig: 
-      nameservers:
-        - 8.8.8.8
-        - 8.0.8.0
+        nameservers:
+          - 8.8.8.8
+          - 8.0.8.0
       containers:
       - name: pihole
         image: pihole/pihole:latest
