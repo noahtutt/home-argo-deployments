@@ -17,3 +17,5 @@ spec:
       server: https://kubernetes.default.svc
     - namespace: n8kicker
       server: https://kubernetes.default.svc
+    - namespace: pihole
+      server: https://kubernetes.default.svc
