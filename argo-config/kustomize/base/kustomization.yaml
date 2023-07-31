@@ -10,3 +10,4 @@ resources:
 - application-cert-manager.yaml
 - application-rook-ceph.yaml
 - application-n8kicker.yaml
+- application-pihole.yaml
