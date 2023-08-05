@@ -15,3 +15,8 @@ patchesJson6902:
       kind: Deployment
       name: argocd-server
     path: accept-http.yaml
+  - target:
+      version: v1
+      kind: ConfigMap
+      name: argocd-cm 
+    path: argo-cm-patch.yaml
