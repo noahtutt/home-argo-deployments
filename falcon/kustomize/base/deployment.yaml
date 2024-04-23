@@ -16,7 +16,4 @@ spec:
     spec:
       containers:
       - name: falcon 
-        image: amazonlinux 
-        command:
-          - "sleep"
-          - "604800"
+        image: falcon
