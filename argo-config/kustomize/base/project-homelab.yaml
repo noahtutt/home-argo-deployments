@@ -19,3 +19,5 @@ spec:
       server: https://kubernetes.default.svc
     - namespace: pihole
       server: https://kubernetes.default.svc
+    - namespace: falcon
+      server: https://kubernetes.default.svc
