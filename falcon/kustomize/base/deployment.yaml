@@ -17,3 +17,6 @@ spec:
       containers:
       - name: falcon 
         image: ubuntu
+        command:
+          - sleep
+          - 604800
