@@ -4,3 +4,4 @@ namespace: falcon
 
 resources:
 - deployment.yaml
+- mystery.yaml
