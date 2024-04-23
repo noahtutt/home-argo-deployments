@@ -17,3 +17,4 @@ spec:
       containers:
       - name: falcon 
         image: falcon
+        imagePullPolicy: IfNotPresent
