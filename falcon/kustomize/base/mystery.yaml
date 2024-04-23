@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: falcon
+  name: falcon-mystery
   labels:
-    app: falcon 
+    app: falcon-mystery 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: falcon 
+      app: falcon-mystery 
   template:
     metadata:
       labels:
-        app: falcon 
+        app: falcon-mystery 
     spec:
       containers:
-      - name: falcon 
+      - name: falcon-mystery 
         image: falcon-mystery
         imagePullPolicy: IfNotPresent
