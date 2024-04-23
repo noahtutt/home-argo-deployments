@@ -18,5 +18,5 @@ spec:
       - name: falcon 
         image: ubuntu
         command:
-          - sleep
-          - 604800
+          - "sleep"
+          - "604800"
