@@ -25,10 +25,14 @@ spec:
         - name: mc-data-volume
           mountPath: "/minecraft"
         resources:
+          requests:
+            memory: 4G
+            cpu: 1000m 
+            ephemeral-storage: 1G
           limits:
             memory: 12G
-            cpu: 4000m
-            ephemeral-storage: 1G
+            cpu: 4000m 
+            ephemeral-storage: 2G
         ports:
         - containerPort: 25565
           name: mc-server
