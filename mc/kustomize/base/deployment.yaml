@@ -28,7 +28,7 @@ spec:
           mountPath: "/minecraft"
         resources:
           limits:
-            memory: 6GiB
+            memory: 6G
             cpu: 2000m
         ports:
         - containerPort: 25565
