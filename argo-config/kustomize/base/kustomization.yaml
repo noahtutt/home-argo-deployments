@@ -11,3 +11,4 @@ resources:
 - application-rook-ceph.yaml
 - application-n8kicker.yaml
 - application-pihole.yaml
+- application-mc.yaml

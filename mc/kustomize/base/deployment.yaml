@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mc
+  labels:
+    app: mc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mc
+  template:
+    metadata:
+      labels:
+        app: mc
+        name: mc
+    spec:
+      dnsPolicy: "ClusterFirst"
+      containers:
+      - name: mc
+        image: noahtutt/mc:latest
+        imagePullPolicy: Always
+        tty: true
+        stdin: true
+        env:
+        volumeMounts:
+        - name: mc-data-volume
+          mountPath: "/minecraft"
+        resources:
+          limits:
+            memory: 6GiB
+            cpu: 2000m
+        ports:
+        - containerPort: 25565
+          name: mc-server
+        - containerPort: 24454 
+          name: mc-voice
+      volumes:
+      - name: mc-data-volume
+        persistentVolumeClaim:
+          claimName: mc-data-claim
