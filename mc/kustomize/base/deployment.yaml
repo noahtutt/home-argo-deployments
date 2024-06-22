@@ -20,8 +20,6 @@ spec:
       - name: mc
         image: noahtutt/mc:latest
         imagePullPolicy: Always
-        tty: true
-        stdin: true
         env:
         volumeMounts:
         - name: mc-data-volume
