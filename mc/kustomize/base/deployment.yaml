@@ -30,6 +30,7 @@ spec:
           limits:
             memory: 6G
             cpu: 2000m
+            ephemeral-storage: 1G
         ports:
         - containerPort: 25565
           name: mc-server
