@@ -6,6 +6,8 @@ metadata:
     app: mc-cron
 spec:
   schedule: "*/2 * * * *"
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 60
   jobTemplate:
     spec:
       template:
