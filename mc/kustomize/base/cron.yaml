@@ -7,32 +7,34 @@ metadata:
 spec:
   schedule: "*/15 * * * *"
   jobTemplate:
-    metadata:
-      labels:
-        app: mc-cron
-        name: mc-cron
-    spec:
-      restartPolicy: Never
-      containers:
-      - name: mc-cron
-        image: noahtutt/mc-cron:latest
-        imagePullPolicy: Always
-        env:
-        volumeMounts:
-        - name: mc-data-volume
-          mountPath: "/minecraft"
-          readOnly: true
-        - name: mc-map-volume
-          mountPath: "/map"
-        resources:
-          requests:
-            memory: 500M
-            cpu: 500m 
-            ephemeral-storage: 1G
-      volumes:
-      - name: mc-data-volume
-        persistentVolumeClaim:
-          claimName: mc-data-claim
-      - name: mc-map-volume
-        persistentVolumeClaim:
-          claimName: mc-map-claim
+    template:
+      spec:
+        metadata:
+          labels:
+            app: mc-cron
+            name: mc-cron
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: mc-cron
+            image: noahtutt/mc-cron:latest
+            imagePullPolicy: Always
+            env:
+            volumeMounts:
+            - name: mc-data-volume
+              mountPath: "/minecraft"
+              readOnly: true
+            - name: mc-map-volume
+              mountPath: "/map"
+            resources:
+              requests:
+                memory: 500M
+                cpu: 500m 
+                ephemeral-storage: 1G
+          volumes:
+          - name: mc-data-volume
+            persistentVolumeClaim:
+              claimName: mc-data-claim
+          - name: mc-map-volume
+            persistentVolumeClaim:
+              claimName: mc-map-claim
