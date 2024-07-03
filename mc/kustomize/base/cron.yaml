@@ -5,13 +5,14 @@ metadata:
   labels:
     app: mc-cron
 spec:
-  schedule: "/15 * * * *"
+  schedule: "*/15 * * * *"
   jobTemplate:
     metadata:
       labels:
         app: mc-cron
         name: mc-cron
     spec:
+      restartPolicy: Never
       containers:
       - name: mc-cron
         image: noahtutt/mc-cron:latest
