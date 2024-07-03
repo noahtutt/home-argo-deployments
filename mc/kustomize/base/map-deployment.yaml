@@ -24,6 +24,7 @@ spec:
         volumeMounts:
         - name: mc-map-volume
           mountPath: "/user/share/nginx/html"
+          readOnly: true
         ports:
         - containerPort: 80
           name: http
