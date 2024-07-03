@@ -9,10 +9,6 @@ spec:
   jobTemplate:
     spec:
       template:
-        metadata:
-          labels:
-            app: mc-cron
-            name: mc-cron
         spec:
           restartPolicy: Never
           containers:
