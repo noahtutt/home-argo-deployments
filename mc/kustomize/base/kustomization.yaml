@@ -5,7 +5,11 @@ namespace: mc
 resources:
 - namespace.yaml
 - deployment.yaml
-- cron.yaml
 - service.yaml
 - server-claim.yaml
+- cron.yaml
 - map-claim.yaml
+- map-deployment.yaml
+- map-service.yaml
+- map-ingress.yaml
+- map-tls.yaml
