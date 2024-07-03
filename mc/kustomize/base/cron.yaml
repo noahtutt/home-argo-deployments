@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: mc-cron
+  labels:
+    app: mc-cron
+spec:
+  schedule: "/15 * * * *"
+  jobTemplate:
+    metadata:
+      labels:
+        app: mc-cron
+        name: mc-cron
+    spec:
+      containers:
+      - name: mc-cron
+        image: noahtutt/mc-cron:latest
+        imagePullPolicy: Always
+        env:
+        volumeMounts:
+        - name: mc-data-volume
+          mountPath: "/minecraft"
+          readOnly: true
+        - name: mc-map-volume
+          mountPath: "/map"
+        resources:
+          requests:
+            memory: 500M
+            cpu: 500m 
+            ephemeral-storage: 1G
+      volumes:
+      - name: mc-data-volume
+        persistentVolumeClaim:
+          claimName: mc-data-claim
+      - name: mc-map-volume
+        persistentVolumeClaim:
+          claimName: mc-map-claim
