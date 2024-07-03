@@ -20,5 +20,5 @@ spec:
   tls:
     - hosts:
       - mc.noahtutt.dev
-      secretName: tls-pihole-dashboard
+      secretName: mc-map
 
