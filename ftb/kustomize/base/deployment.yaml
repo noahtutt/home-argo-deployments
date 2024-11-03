@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ftb
+  labels:
+    app: ftb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ftb
+  template:
+    metadata:
+      labels:
+        app: ftb
+        name: ftb
+    spec:
+      dnsPolicy: "ClusterFirst"
+      containers:
+      - name: ftb
+        image: noahtutt/ftb:latest
+        imagePullPolicy: Always
+        env:
+        volumeMounts:
+        - name: ftb-data-volume
+          mountPath: "/minecraft"
+        resources:
+          requests:
+            memory: 4G
+            cpu: 1000m 
+            ephemeral-storage: 1G
+          limits:
+            memory: 12G
+            cpu: 4000m 
+            ephemeral-storage: 2G
+        ports:
+        - containerPort: 1025
+          name: ftb-server
+      volumes:
+      - name: ftb-data-volume
+        persistentVolumeClaim:
+          claimName: ftb-data-claim

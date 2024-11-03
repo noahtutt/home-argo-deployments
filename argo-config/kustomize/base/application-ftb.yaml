@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: ftb
+  namespace: argocd
+  finalizers:
+    - resources.finalizer.argocd.argoproj.io
+spec:
+  project: homelab
+  source:
+    repoURL: https://github.com/noahtutt/home-argo-deployments
+    targetRevision: HEAD
+    path: ftb/kustomize/base
+  destination:
+    namespace: ftb 
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - ApplyOutOfSyncOnly=true
+
