@@ -23,3 +23,5 @@ spec:
       server: https://kubernetes.default.svc
     - namespace: mc
       server: https://kubernetes.default.svc
+    - namespace: ftb
+      server: https://kubernetes.default.svc
