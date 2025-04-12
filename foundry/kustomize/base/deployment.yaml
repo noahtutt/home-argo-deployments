@@ -30,6 +30,11 @@ spec:
               secretKeyRef:
                 name: foundry-login
                 key: password
+          - name: FOUNDRY_ADMIN_KEY
+            valueFrom:
+              secretKeyRef:
+                name: foundry-admin
+                key: key
         volumeMounts:
         - name: foundry-data-volume
           mountPath: "/data"
