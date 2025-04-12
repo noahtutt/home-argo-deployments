@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foundry
+  labels:
+    app: foundry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: foundry
+  template:
+    metadata:
+      labels:
+        app: foundry
+        name: foundry
+    spec:
+      dnsPolicy: "ClusterFirst"
+      containers:
+      - name: foundry
+        image: felddy/foundryvtt:12.331
+        env:
+        volumeMounts:
+        - name: foundry-data-volume
+          mountPath: "/data"
+        resources:
+          requests:
+            memory: 2G
+            cpu: 1000m 
+            ephemeral-storage: 1G
+          limits:
+            memory: 12G
+            cpu: 4000m 
+            ephemeral-storage: 2G
+        ports:
+        - containerPort: 30000
+          name: foundry-server
+      volumes:
+      - name: foundry-data-volume
+        persistentVolumeClaim:
+          claimName: foundry-data-claim

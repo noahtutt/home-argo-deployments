@@ -13,3 +13,4 @@ resources:
 - application-pihole.yaml
 - application-mc.yaml
 - application-ftb.yaml
+- application-foundry.yaml
