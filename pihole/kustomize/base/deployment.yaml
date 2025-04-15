@@ -37,6 +37,15 @@ spec:
           mountPath: "/etc/pihole"
         - name: pihole-dnsmasq-volume
           mountPath: "/etc/dnsmasq.d"
+        resources:
+          requests:
+            memory: 500m
+            cpu: 100m 
+            ephemeral-storage: 1G
+          limits:
+            memory: 8G
+            cpu: 2000m 
+            ephemeral-storage: 2G
       volumes:
       - name: pihole-etc-volume
         persistentVolumeClaim:
