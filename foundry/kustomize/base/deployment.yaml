@@ -46,7 +46,7 @@ spec:
           limits:
             memory: 12G
             cpu: 4000m 
-            ephemeral-storage: 2G
+            ephemeral-storage: 50G
         ports:
         - containerPort: 30000
           name: foundry-server
