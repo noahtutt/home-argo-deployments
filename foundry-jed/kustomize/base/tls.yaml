@@ -5,7 +5,7 @@ metadata:
 spec:
   secretName: foundry-jed
   dnsNames:
-  - 2.foundry.noahtutt.dev
+  - foundry2.noahtutt.dev
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
