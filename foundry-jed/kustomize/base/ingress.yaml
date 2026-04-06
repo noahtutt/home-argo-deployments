@@ -7,7 +7,7 @@ metadata:
     ingress.kubernetes.io/app-root: "/"
 spec:
   rules:
-    - host: foundry2.noahtutt.dev
+    - host: 2.foundry.noahtutt.dev
       http: 
         paths:
         - backend:
@@ -19,6 +19,6 @@ spec:
           pathType: Prefix
   tls:
     - hosts:
-      - foundry2.noahtutt.dev
+      - 2.foundry.noahtutt.dev
       secretName: foundry-jed
 
