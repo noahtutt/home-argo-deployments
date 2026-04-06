@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: foundry-jed
+  annotations: 
+    ingress.kubernetes.io/proxy-body-size: 100M
+    ingress.kubernetes.io/app-root: "/"
+spec:
+  rules:
+    - host: 2.foundry.noahtutt.dev
+      http: 
+        paths:
+        - backend:
+            service: 
+              name: foundry-jed
+              port:
+                name: http
+          path: / 
+          pathType: Prefix
+  tls:
+    - hosts:
+      - 2.foundry.noahtutt.dev
+      secretName: foundry-jed
+

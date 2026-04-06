@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: foundry-jed
+spec:
+  secretName: foundry-jed
+  dnsNames:
+  - 2.foundry.noahtutt.dev
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+    group: cert-manager.io

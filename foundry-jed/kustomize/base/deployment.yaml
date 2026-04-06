@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foundry-jed
+  labels:
+    app: foundry-jed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: foundry-jed
+  template:
+    metadata:
+      labels:
+        app: foundry-jed
+        name: foundry-jed
+    spec:
+      dnsPolicy: "ClusterFirst"
+      containers:
+      - name: foundry-jed
+        image: felddy/foundryvtt:12.331
+        env:
+          - name: FOUNDRY_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: foundry-jed-login
+                key: username
+          - name: FOUNDRY_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: foundry-jed-login
+                key: password
+          - name: FOUNDRY_ADMIN_KEY
+            valueFrom:
+              secretKeyRef:
+                name: foundry-jed-admin
+                key: key
+        volumeMounts:
+        - name: foundry-jed-data-volume
+          mountPath: "/data"
+        resources:
+          requests:
+            memory: 500Mi
+            cpu: 100m 
+            ephemeral-storage: 1G
+          limits:
+            memory: 12G
+            cpu: 4000m 
+            ephemeral-storage: 50G
+        ports:
+        - containerPort: 30000
+          name: foundry-jed-server
+      volumes:
+      - name: foundry-jed-data-volume
+        persistentVolumeClaim:
+          claimName: foundry-jed-data-claim
