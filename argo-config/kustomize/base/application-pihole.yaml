@@ -20,4 +20,5 @@ spec:
       prune: true
     syncOptions:
     - ApplyOutOfSyncOnly=true
+    - ServerSideApply=true
 
