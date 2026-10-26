@@ -5,13 +5,13 @@ metadata:
   namespace: system-upgrade
 spec:
   concurrency: 1
-  cordon: true
+  cordon: false
   nodeSelector:
     matchExpressions:
     - key: node-role.kubernetes.io/control-plane
       operator: In
       values:
-      - 'true'
+      - "true"
   serviceAccountName: system-upgrade
   upgrade:
     image: rancher/k3s-upgrade
