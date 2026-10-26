@@ -4,4 +4,3 @@ namespace: system-upgrade
 
 resources:
 - https://github.com/rancher/system-upgrade-controller/releases/latest/download/crd.yaml
-- 1.28.yaml
