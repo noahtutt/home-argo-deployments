@@ -13,6 +13,7 @@ resources:
 - application-pihole.yaml
 - application-mc.yaml
 - application-mc2.yaml
+- application-system-upgrade.yaml
 - application-ftb.yaml
 - application-foundry.yaml
 - application-foundry-jed.yaml
