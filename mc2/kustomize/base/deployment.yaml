@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mc2
+  labels:
+    app: mc2
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: mc2
+  template:
+    metadata:
+      labels:
+        app: mc2
+        name: mc2
+    spec:
+      dnsPolicy: "ClusterFirst"
+      containers:
+      - name: mc2
+        image: noahtutt/mc2:latest
+        imagePullPolicy: Always
+        env:
+        volumeMounts:
+        - name: mc2-data-volume
+          mountPath: "/minecraft"
+        resources:
+          requests:
+            memory: 4G
+            cpu: 1000m 
+            ephemeral-storage: 1G
+          limits:
+            memory: 12G
+            cpu: 4000m 
+            ephemeral-storage: 2G
+        ports:
+        - containerPort: 25565
+          name: mc2-server
+      volumes:
+      - name: mc2-data-volume
+        persistentVolumeClaim:
+          claimName: mc2-data-claim

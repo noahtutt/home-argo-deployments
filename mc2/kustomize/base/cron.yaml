@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: mc2-cron
+  labels:
+    app: mc2-cron
+spec:
+  schedule: "*/2 * * * *"
+  concurrencyPolicy: Forbid
+  suspend: true
+  startingDeadlineSeconds: 60
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: mc2-cron
+            image: noahtutt/mc2-cron:latest
+            imagePullPolicy: Always
+            env:
+            volumeMounts:
+            - name: mc2-data-volume
+              mountPath: "/minecraft"
+              readOnly: true
+            - name: mc2-map-volume
+              mountPath: "/map"
+            resources:
+              requests:
+                memory: 500Mi
+                cpu: 500m 
+                ephemeral-storage: 1G
+          volumes:
+          - name: mc2-data-volume
+            persistentVolumeClaim:
+              claimName: mc2-data-claim
+          - name: mc2-map-volume
+            persistentVolumeClaim:
+              claimName: mc2-map-claim

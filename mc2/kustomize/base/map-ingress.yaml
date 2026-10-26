@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: m2-map
+  annotations: 
+    ingress.kubernetes.io/proxy-body-size: 100M
+    ingress.kubernetes.io/app-root: "/"
+spec:
+  rules:
+    - host: m2.noahtutt.dev
+      http: 
+        paths:
+        - backend:
+            service: 
+              name: m2-map 
+              port:
+                name: http
+          path: / 
+          pathType: Prefix
+  tls:
+    - hosts:
+      - m2.noahtutt.dev
+      secretName: m2-map
+

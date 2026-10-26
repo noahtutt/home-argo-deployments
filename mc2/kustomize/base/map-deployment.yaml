@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mc2-map
+  labels:
+    app: mc2-map
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: mc2-map
+  template:
+    metadata:
+      labels:
+        app: mc2-map
+        name: mc2-map
+    spec:
+      dnsPolicy: "ClusterFirst"
+      containers:
+      - name: mc2-map
+        image: nginx:alpine
+        imagePullPolicy: Always
+        env:
+        volumeMounts:
+        - name: mc2-map-volume
+          mountPath: "/usr/share/nginx/html"
+          readOnly: true
+        ports:
+        - containerPort: 80
+          name: http
+      volumes:
+      - name: mc2-map-volume
+        persistentVolumeClaim:
+          claimName: mc2-map-claim
