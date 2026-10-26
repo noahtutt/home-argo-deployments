@@ -15,4 +15,4 @@ spec:
   serviceAccountName: system-upgrade
   upgrade:
     image: rancher/k3s-upgrade
-  version: 1.28.15+k3s1
+  spec: 1.28.15+k3s1
