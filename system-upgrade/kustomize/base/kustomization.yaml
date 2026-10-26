@@ -3,5 +3,6 @@ kind: Kustomization
 namespace: system-upgrade
 
 resources:
+- namespace.yaml
 - https://github.com/rancher/system-upgrade-controller/releases/latest/download/crd.yaml
 - 1.28.yaml
