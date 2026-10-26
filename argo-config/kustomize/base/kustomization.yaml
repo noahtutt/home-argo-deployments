@@ -6,7 +6,6 @@ resources:
 - project-argocd.yaml
 - project-cert-manager.yaml
 - project-rook-ceph.yaml
-- project-system-upgrade.yaml
 - application-argo-deployment.yaml
 - application-cert-manager.yaml
 - application-rook-ceph.yaml
@@ -14,7 +13,6 @@ resources:
 - application-pihole.yaml
 - application-mc.yaml
 - application-mc2.yaml
-- application-system-upgrade.yaml
 - application-ftb.yaml
 - application-foundry.yaml
 - application-foundry-jed.yaml
