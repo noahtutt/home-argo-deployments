@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mc-map
+  name: mc2-map
 spec:
   selector:
-    app: mc-map
+    app: mc2-map
   ports:
   - port: 80
     targetPort: 80
