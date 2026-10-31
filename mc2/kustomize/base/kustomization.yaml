@@ -7,8 +7,6 @@ resources:
 - deployment.yaml
 - service.yaml
 - server-claim.yaml
-- cron.yaml
-- map-claim.yaml
 - map-deployment.yaml
 - map-service.yaml
 - map-ingress.yaml

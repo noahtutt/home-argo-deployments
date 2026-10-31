@@ -36,6 +36,8 @@ spec:
         ports:
         - containerPort: 25565
           name: mc2-server
+        - containerPort: 80
+          name: http
       volumes:
       - name: mc2-data-volume
         persistentVolumeClaim:
