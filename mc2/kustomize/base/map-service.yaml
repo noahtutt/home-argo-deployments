@@ -4,7 +4,7 @@ metadata:
   name: mc2-map
 spec:
   selector:
-    app: mc2-map
+    app: mc2
   ports:
   - port: 80
     targetPort: 80
