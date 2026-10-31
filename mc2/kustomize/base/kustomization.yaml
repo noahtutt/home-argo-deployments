@@ -7,7 +7,6 @@ resources:
 - deployment.yaml
 - service.yaml
 - server-claim.yaml
-- map-deployment.yaml
 - map-service.yaml
 - map-ingress.yaml
 - map-tls.yaml
